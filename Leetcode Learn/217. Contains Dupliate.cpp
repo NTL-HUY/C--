@@ -34,7 +34,21 @@ bool solution3(vector<int> & nums){
 }
 
 bool solution4(vector<int> & nums){
-    unordered_map<int,int> map;
+    int n = nums.size();
+    int max = INT_MIN;
+    int min = INT_MAX;
+    for(int i = 0; i < n; i++){
+        if(nums[i] < min || nums[i] > max){
+            max = std::max(nums[i],max);
+            min = std::min(nums[i],min);
+            continue;
+        }
+
+        for(int j = 0; j < i; j++)
+            if(nums[i] == nums[j])
+                return true;
+    }
+    return false;
 }
 int main(){
     return 0;
