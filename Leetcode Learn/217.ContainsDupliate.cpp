@@ -8,7 +8,7 @@ using namespace std;
 
 bool solution1(vector<int> & nums){
     for(int i=0; i < nums.size() - 1; i++ ){
-        for(int j = i + 1; j < nums.size(); j++){
+        for(int j = i + 1; j < (int) nums.size(); j++){
             if(nums[j] == nums[i])
                 return true;
         }
@@ -51,5 +51,8 @@ bool solution4(vector<int> & nums){
     return false;
 }
 int main(){
+    vector <int> a = {1,2,3,1};
+    solution4(a);
+    cout << "hello";
     return 0;
 }
